@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ResponsiPemrog2318
+namespace ResponsiPemrog2366
 {
     public class Karyawan
     {
