@@ -1,41 +1,44 @@
-﻿using System;
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ResponsiPemrog2366
+namespace Responsi
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Karyawan kry1 = new Karyawan();
+            Console.Title = "Responsi Pemrog tahun 2018/2019";
+            Karyawan ObjKaryawan = new Karyawan("123456", "Paijo", 3000000);
+            Karyawan ObjKaryawan2 = new Karyawan("123456", "Budi", -1000);
 
-            kry1.Nik = "190302123";
-            kry1.Nama = "Paijo";
-            kry1.GajiBulanan = 3000000;
+            Hasil(ObjKaryawan,ObjKaryawan2);
 
-            Karyawan kry2 = new Karyawan();
+            Console.WriteLine("Asyiiiiikkkk Kenaikan Gaji 10%");
+            Console.WriteLine();
+            ObjKaryawan.GajiBulanan = Convert.ToInt32((0.10 * ObjKaryawan.GajiBulanan) + ObjKaryawan.GajiBulanan);
+            ObjKaryawan2.GajiBulanan = Convert.ToInt32((0.10 * ObjKaryawan2.GajiBulanan) + ObjKaryawan2.GajiBulanan);
 
-            kry2.Nik = "190302124";
-            kry2.Nama = "Jono";
-            kry2.GajiBulanan = 2000000;
+            Hasil(ObjKaryawan, ObjKaryawan2);
 
-
-            Console.WriteLine("No.\tNik/Nama\t\tGaji Bulanan");
-            Console.WriteLine("-----------------------------------------------------------");
-            Console.WriteLine("1.\t{0}  {1}\t\t{2}", kry1.Nik, kry1.Nama, kry1.GajiBulanan);
-            Console.WriteLine("2.\t{0}  {1}\t\t{2}", kry2.Nik, kry2.Nama, kry2.GajiBulanan);
-
-            Console.WriteLine("\n\n");
-            Console.WriteLine("Asyiiik Kenaikan Gaji 10%");
-            Console.WriteLine("\n");
-            Console.WriteLine("No.\tNik/Nama\t\tGaji Bulanan");
-            Console.WriteLine("------------------------------------------------------------");
-            Console.WriteLine("1.\t{0}  {1}\t\t{2}", kry1.Nik, kry1.Nama, kry1.GajiBulanan + (kry1.GajiBulanan * 0.10));
-            Console.WriteLine("2.\t{0}  {1}\t\t{2}", kry2.Nik, kry2.Nama, kry2.GajiBulanan + (kry2.GajiBulanan * 0.10));
             Console.ReadKey();
+        }
+
+        static void Hasil(Karyawan karyawan, Karyawan karyawan2)
+        {
+            Console.WriteLine("No. \tNik/Nama\t Gaji Bulanan");
+            Console.WriteLine("-------------------------------------------------------");
+            Console.Write("1. ");
+            Console.Write("{0} {1}\t", karyawan.Nik, karyawan.Nama);
+            Console.Write("\t{0}", karyawan.GajiBulanan);
+            Console.WriteLine();
+            Console.Write("2. ");
+            Console.Write("{0} {1}\t", karyawan2.Nik, karyawan2.Nama);
+            Console.WriteLine("\t{0}", karyawan2.GajiBulanan);
+            Console.WriteLine();
         }
     }
 }
